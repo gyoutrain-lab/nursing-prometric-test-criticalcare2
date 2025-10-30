@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Critical Care & Emergency 2 Prometric Simulation Test</title>
 
-  <!-- Social Preview (WhatsApp, Facebook, etc.) -->
+  <!-- ✅ SOCIAL MEDIA PREVIEW -->
   <meta property="og:title" content="Critical Care & Emergency 2 Prometric Simulation Test" />
   <meta property="og:description" content="SMLE-based materials — Train yourself better to achieve your higher career with better solutions." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/gyoutrain-lab/nursing-prometric-test/main/icon4.jpg" />
+  <meta property="og:image" content="https://github.com/gyoutrain-lab/nursing-prometric-test/raw/main/icon4.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gyoutrain-lab.github.io/nursing-prometric-test/" />
 
-  <!-- Favicon -->
+  <!-- ✅ TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Critical Care & Emergency 2 Prometric Simulation Test" />
+  <meta name="twitter:description" content="SMLE-based materials — Train yourself better to achieve your higher career with better solutions." />
+  <meta name="twitter:image" content="https://github.com/gyoutrain-lab/nursing-prometric-test/raw/main/icon4.jpg" />
+
+  <!-- ✅ FAVICON -->
   <link rel="icon" type="image/jpeg" href="icon4.jpg" />
 
   <style>
@@ -28,69 +34,71 @@
       background-size: cover;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      color: white;
       text-align: center;
+      color: white;
       position: relative;
       overflow: hidden;
     }
 
-    /* Transparent overlay */
+    /* Dark overlay */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.55);
       z-index: 0;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
+    .content {
       z-index: 1;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-      opacity: 0;
+      max-width: 800px;
+      padding: 20px;
       animation: fadeIn 2s ease forwards;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
     }
 
     p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 15px auto;
-      z-index: 1;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      font-size: 1.25rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      margin-bottom: 35px;
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 0.5s;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 0.3s;
     }
 
     button {
-      margin-top: 30px;
-      padding: 15px 50px;
-      font-size: 1.1rem;
+      padding: 15px 60px;
+      font-size: 1.2rem;
       background-color: #ffcc00;
       color: #000;
       border: none;
-      border-radius: 40px;
+      border-radius: 50px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s ease;
-      z-index: 1;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
       opacity: 0;
-      animation: fadeIn 2s ease forwards, pulse 2s infinite ease-in-out;
-      animation-delay: 1s, 2.5s;
+      animation: fadeInUp 2s ease forwards, pulse 2s infinite ease-in-out;
+      animation-delay: 0.8s, 2.5s;
     }
 
     button:hover {
       background-color: #ffaa00;
-      transform: scale(1.07);
-      box-shadow: 0 0 25px rgba(255,204,0,0.8);
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255,204,0,0.9);
     }
 
-    /* Footer (slides up) */
     .footer {
       position: absolute;
       bottom: -60px;
@@ -100,16 +108,22 @@
       color: #ff4d4d;
       font-weight: 700;
       animation: slideUp 2s ease forwards;
-      animation-delay: 1.5s;
+      animation-delay: 1.2s;
+      z-index: 2;
     }
 
     /* Animations */
-    @keyframes slideUp {
-      to { bottom: 25px; opacity: 1; }
-    }
-
     @keyframes fadeIn {
       to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      to { bottom: 25px; opacity: 1; }
     }
 
     @keyframes pulse {
@@ -122,18 +136,26 @@
         box-shadow: 0 0 30px rgba(255, 204, 0, 0.8);
       }
     }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      button { font-size: 1rem; padding: 12px 40px; }
+    }
   </style>
 </head>
 
 <body>
-  <h1>Critical Care & Emergency 2 Prometric Simulation Test</h1>
-  <p>SMLE-based materials — Train yourself more better to get the higher career here with better solution.</p>
-
-  <button id="startButton">Start the Test</button>
+  <div class="content">
+    <h1>Critical Care & Emergency 2 Prometric Simulation Test</h1>
+    <p>SMLE-based materials — Train yourself more better to get the higher career here with better solution.</p>
+    <button id="startButton">Start the Test</button>
+  </div>
 
   <div class="footer">Prepared by Giyono Asfarrasyid, ETK Yogyakarta</div>
 
-  <!-- Beep Sound -->
+  <!-- ✅ Beep Sound -->
   <audio id="beepSound">
     <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg">
   </audio>
@@ -145,7 +167,7 @@
       beep.play();
       setTimeout(() => {
         window.location.href = 'https://script.google.com/macros/s/AKfycbz1DJGVL81tpGFXEnYK4ZU5wE0v3uS0Uf_eYctmfC1xwHvtViSrR6Fn2W1TNgC7j3DWSw/exec';
-      }, 600);
+      }, 700);
     });
   </script>
 </body>
