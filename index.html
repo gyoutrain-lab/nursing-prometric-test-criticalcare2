@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Critical Care & Emergency 2 Prometric Simulation Test</title>
 
-  <!-- Social Preview -->
+  <!-- Social Preview (WhatsApp, Facebook, etc.) -->
   <meta property="og:title" content="Critical Care & Emergency 2 Prometric Simulation Test" />
   <meta property="og:description" content="SMLE-based materials — Train yourself better to achieve your higher career with better solutions." />
   <meta property="og:image" content="https://raw.githubusercontent.com/gyoutrain-lab/nursing-prometric-test/main/icon4.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gyoutrain-lab.github.io/nursing-prometric-test/" />
 
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="icon4.jpg" />
 
   <style>
@@ -36,6 +37,7 @@
       overflow: hidden;
     }
 
+    /* Transparent overlay */
     body::before {
       content: "";
       position: absolute;
@@ -88,6 +90,7 @@
       box-shadow: 0 0 25px rgba(255,204,0,0.8);
     }
 
+    /* Footer (slides up) */
     .footer {
       position: absolute;
       bottom: -60px;
@@ -100,40 +103,13 @@
       animation-delay: 1.5s;
     }
 
-    /* Progress overlay */
-    #progressOverlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      color: #fff;
-      font-size: 1.5rem;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-    }
-
-    .progress-circle {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 6px solid rgba(255,255,255,0.3);
-      border-top-color: #ffcc00;
-      animation: spin 1s linear infinite;
-      margin-bottom: 15px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    /* Animations */
+    @keyframes slideUp {
+      to { bottom: 25px; opacity: 1; }
     }
 
     @keyframes fadeIn {
       to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      to { bottom: 25px; opacity: 1; }
     }
 
     @keyframes pulse {
@@ -157,12 +133,6 @@
 
   <div class="footer">Prepared by Giyono Asfarrasyid, ETK Yogyakarta</div>
 
-  <!-- Loading Overlay -->
-  <div id="progressOverlay">
-    <div class="progress-circle"></div>
-    <div id="progressText">Loading... 0%</div>
-  </div>
-
   <!-- Beep Sound -->
   <audio id="beepSound">
     <source src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" type="audio/ogg">
@@ -171,26 +141,11 @@
   <script>
     const button = document.getElementById('startButton');
     const beep = document.getElementById('beepSound');
-    const overlay = document.getElementById('progressOverlay');
-    const progressText = document.getElementById('progressText');
-
     button.addEventListener('click', () => {
       beep.play();
-      overlay.style.display = 'flex';
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 10) + 5;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(interval);
-          progressText.textContent = 'Loading... 100%';
-          setTimeout(() => {
-            window.location.href = 'https://script.google.com/macros/s/AKfycbz1DJGVL81tpGFXEnYK4ZU5wE0v3uS0Uf_eYctmfC1xwHvtViSrR6Fn2W1TNgC7j3DWSw/exec';
-          }, 500);
-        } else {
-          progressText.textContent = `Loading... ${progress}%`;
-        }
-      }, 150);
+      setTimeout(() => {
+        window.location.href = 'https://script.google.com/macros/s/AKfycbz1DJGVL81tpGFXEnYK4ZU5wE0v3uS0Uf_eYctmfC1xwHvtViSrR6Fn2W1TNgC7j3DWSw/exec';
+      }, 600);
     });
   </script>
 </body>
